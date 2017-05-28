@@ -37,6 +37,8 @@ def download_dataset(url):
 	f.close()
 
 if __name__ == "__main__":
-	url = "https://archive.org/download/stackexchange/askubuntu.com.7z"
-	url = "https://archive.org/download/stackexchange/chemistry.stackexchange.com.7z"
+	#slower but more data
+	url = "https://archive.org/download/stackexchange/unix.stackexchange.com.7z"
+	#faster for testing
+	url = "https://archive.org/download/stackexchange/chemistry.stackexchange.com.7z" 
 	run(url)

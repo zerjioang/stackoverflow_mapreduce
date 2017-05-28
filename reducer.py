@@ -7,15 +7,19 @@ print " [Status] REDUCE"
 
 lastReadedUserId = None
 lastReadedCount = 0
-separator = ","
+mapper_separator = ","
 fixed_data_length = 2
 
 for line in sys.stdin:
-  data_mapped = line.strip().split(separator)
+  # read standard input line
+  data_mapped = line.strip().split(mapper_separator)
+  #check data length, always must be len = 2 
   if len(data_mapped) != fixed_data_length:
+    # skip received data
     continue
+  # save received data in each variable
   user_id, post_count = data_mapped
-  if lastReadedUserId and lastReadedUserId != user_id:
+  if lastReadedUserId != None and lastReadedUserId != user_id:
     print lastReadedUserId, "\t", lastReadedCount
     lastReadedCount = 0
   lastReadedUserId = user_id
