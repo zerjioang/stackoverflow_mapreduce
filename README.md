@@ -24,7 +24,7 @@ chmod +x ./runme.sh
 As simple as:
 
 ```
-hadoop fs -put ./out/Posts.xml
+hadoop fs -put .
 hs ./mapper.py ./reducer.py ./out/Posts.xml result
 hadoop fs -ls result
 hadoop fs -get result/part-00000
